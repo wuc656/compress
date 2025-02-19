@@ -13,9 +13,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dsnet/compress"
-	"github.com/dsnet/compress/internal"
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress"
+	"github.com/wuc656/compress/internal"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 const testSize = 1000

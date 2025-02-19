@@ -1,4 +1,4 @@
-module github.com/dsnet/compress
+module github.com/wuc656/compress
 
 go 1.24
 

@@ -11,8 +11,8 @@ import (
 	"io"
 	"math"
 
-	"github.com/dsnet/compress/internal/errors"
-	"github.com/dsnet/compress/xflate/internal/meta"
+	"github.com/wuc656/compress/internal/errors"
+	"github.com/wuc656/compresss/xflate/internal/meta"
 )
 
 // chunk is a tuple of raw (uncompressed) size and compressed size for a chunk.

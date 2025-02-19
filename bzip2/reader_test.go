@@ -9,8 +9,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/dsnet/compress/internal/errors"
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress/internal/errors"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 func TestReader(t *testing.T) {

@@ -7,8 +7,8 @@ package brotli
 import (
 	"io"
 
-	"github.com/dsnet/compress/internal"
-	"github.com/dsnet/compress/internal/errors"
+	"github.com/wuc656/compress/internal"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 type Reader struct {

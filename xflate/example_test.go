@@ -14,8 +14,8 @@ import (
 	"io"
 	"log"
 
-	"github.com/dsnet/compress/internal/testutil"
-	"github.com/dsnet/compress/xflate"
+	"github.com/wuc656/compress/internal/testutil"
+	"github.com/wuc656/compresss/xflate"
 )
 
 func init() { log.SetFlags(log.Lshortfile) }

@@ -15,7 +15,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 // The unit tests can also be used to quickly test all of the implementations

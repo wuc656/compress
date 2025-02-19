@@ -10,9 +10,9 @@ package main
 import (
 	"io"
 
-	"github.com/dsnet/compress/brotli"
-	"github.com/dsnet/compress/bzip2"
-	"github.com/dsnet/compress/flate"
+	"github.com/wuc656/compress/brotli"
+	"github.com/wuc656/compress/bzip2"
+	"github.com/wuc656/compress/flate"
 )
 
 func init() {

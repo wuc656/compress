@@ -30,13 +30,13 @@ trap "rm -rf $TMPDIR $PKG_PATH/$PKG_NAME.test" SIGINT SIGTERM EXIT
 	go version
 
 	# Perform coverage profiling.
-	go test github.com/dsnet/compress/$PKG_PATH -coverprofile $TMPDIR/cover.profile
+	go test github.com/wuc656/compress/$PKG_PATH -coverprofile $TMPDIR/cover.profile
 	if [ $? != 0 ]; then exit 1; fi
 	go tool cover -html $TMPDIR/cover.profile -o cover.html
 
 	# Perform performance profiling.
 	if [ $# != 0 ]; then
-		go test -c github.com/dsnet/compress/$PKG_PATH
+		go test -c github.com/wuc656/compress/$PKG_PATH
 		if [ $? != 0 ]; then exit 1; fi
 		./$PKG_NAME.test -test.cpuprofile $TMPDIR/cpu.profile -test.memprofile $TMPDIR/mem.profile -test.run - "$@"
 		PPROF="go tool pprof"

@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/dsnet/compress/internal/errors"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 // Writer implements a prefix encoder. For performance reasons, Writer will not

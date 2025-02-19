@@ -8,8 +8,8 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/dsnet/compress/internal/errors"
-	"github.com/dsnet/compress/internal/prefix"
+	"github.com/wuc656/compress/internal/errors"
+	"github.com/wuc656/compresss/internal/prefix"
 )
 
 // A Reader is an io.Reader that can read XFLATE's meta encoding.

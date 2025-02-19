@@ -7,7 +7,7 @@
 
 package main
 
-import "github.com/dsnet/compress/internal/cgo/lzma"
+import "github.com/wuc656/compress/internal/cgo/lzma"
 
 func init() {
 	RegisterEncoder(FormatLZMA2, "cgo", lzma.NewWriter)

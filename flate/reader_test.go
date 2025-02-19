@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dsnet/compress/internal/errors"
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress/internal/errors"
+	"github.com/wuc656/compresss/internal/testutil"
 )
 
 var zcheck = flag.Bool("zcheck", false, "verify reader test vectors with C zlib library")

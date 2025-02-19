@@ -10,8 +10,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/dsnet/compress/internal/errors"
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress/internal/errors"
+	"github.com/wuc656/compresss/internal/testutil"
 )
 
 // TestWriter tests that the encoded output matches the expected output exactly.

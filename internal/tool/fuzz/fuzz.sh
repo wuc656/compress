@@ -21,11 +21,11 @@ done
 # Clone the initial work directory if it does not exist.
 if [ ! -d ".work" ]; then
 	echo "Fuzzing workdir does not exist."
-	git clone https://github.com/dsnet/compress-fuzz.git .work
+	git clone https://github.com/wuc656/compress-fuzz.git .work
 fi
 
 PKG=$(echo $1 | sed 's/\/*$//g')
-PKG_PATH="github.com/dsnet/compress/internal/tool/fuzz"
+PKG_PATH="github.com/wuc656/compress/internal/tool/fuzz"
 shift
 
 echo "Building..."

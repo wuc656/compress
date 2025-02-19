@@ -7,7 +7,7 @@
 
 package main
 
-import "github.com/dsnet/compress/internal/cgo/flate"
+import "github.com/wuc656/compress/internal/cgo/flate"
 
 func init() {
 	RegisterEncoder(FormatFlate, "cgo", flate.NewWriter)

@@ -8,7 +8,7 @@ import (
 	"bufio"
 	"io"
 
-	"github.com/dsnet/compress/internal/errors"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 // The bitReader preserves the property that it will never read more bytes than

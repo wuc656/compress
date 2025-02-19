@@ -11,8 +11,8 @@ import (
 	"bytes"
 	"io"
 
-	gbrotli "github.com/dsnet/compress/brotli"
-	cbrotli "github.com/dsnet/compress/internal/cgo/brotli"
+	gbrotli "github.com/wuc656/compress/brotli"
+	cbrotli "github.com/wuc656/compresss/internal/cgo/brotli"
 )
 
 func Fuzz(data []byte) int {

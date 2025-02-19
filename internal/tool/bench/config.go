@@ -186,7 +186,7 @@ func defaultCodecs() []string {
 }
 
 func defaultPaths() []string {
-	const testdataPkg = "github.com/dsnet/compress/testdata"
+	const testdataPkg = "github.com/wuc656/compress/testdata"
 	pkg, err := build.Import(testdataPkg, "", build.FindOnly)
 	if err != nil {
 		return nil

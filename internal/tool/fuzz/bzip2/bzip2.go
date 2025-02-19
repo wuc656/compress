@@ -12,9 +12,9 @@ import (
 	"errors"
 	"io"
 
-	"github.com/dsnet/compress"
-	gbzip2 "github.com/dsnet/compress/bzip2"
-	cbzip2 "github.com/dsnet/compress/internal/cgo/bzip2"
+	"github.com/wuc656/compress"
+	gbzip2 "github.com/wuc656/compress/bzip2"
+	cbzip2 "github.com/wuc656/compress/internal/cgo/bzip2"
 )
 
 func Fuzz(data []byte) int {

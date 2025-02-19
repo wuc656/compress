@@ -4,7 +4,7 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE.md file.
 
-cd $(go list -f '{{ .Dir }}' github.com/dsnet/compress)
+cd $(go list -f '{{ .Dir }}' github.com/wuc656/compress)
 
 BOLD="\x1b[1mRunning: "
 PASS="\x1b[32mPASS"
@@ -22,17 +22,17 @@ if [[ ! -z "$RET_TEST" ]]; then echo "$RET_TEST"; echo; fi
 echo -e "${BOLD}staticcheck${RESET}"
 RET_SCHK=$(staticcheck \
 	-ignore "
-		github.com/dsnet/compress/brotli/*.go:SA4016
-		github.com/dsnet/compress/brotli/*.go:S1023
-		github.com/dsnet/compress/brotli/*.go:U1000
-		github.com/dsnet/compress/bzip2/*.go:S1023
-		github.com/dsnet/compress/flate/*.go:U1000
-		github.com/dsnet/compress/internal/cgo/lzma/*.go:SA4000
-		github.com/dsnet/compress/internal/prefix/*.go:S1004
-		github.com/dsnet/compress/internal/prefix/*.go:S1023
-		github.com/dsnet/compress/internal/prefix/*.go:SA4016
-		github.com/dsnet/compress/internal/tool/bench/*.go:S1007
-		github.com/dsnet/compress/xflate/internal/meta/*.go:S1023
+		github.com/wuc656/compress/brotli/*.go:SA4016
+		github.com/wuc656/compress/brotli/*.go:S1023
+		github.com/wuc656/compress/brotli/*.go:U1000
+		github.com/wuc656/compress/bzip2/*.go:S1023
+		github.com/wuc656/compress/flate/*.go:U1000
+		github.com/wuc656/compress/internal/cgo/lzma/*.go:SA4000
+		github.com/wuc656/compress/internal/prefix/*.go:S1004
+		github.com/wuc656/compress/internal/prefix/*.go:S1023
+		github.com/wuc656/compress/internal/prefix/*.go:SA4016
+		github.com/wuc656/compress/internal/tool/bench/*.go:S1007
+		github.com/wuc656/compress/xflate/internal/meta/*.go:S1023
 	" ./... 2>&1)
 if [[ ! -z "$RET_SCHK" ]]; then echo "$RET_SCHK"; echo; fi
 
