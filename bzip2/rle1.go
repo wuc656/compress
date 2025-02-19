@@ -4,7 +4,7 @@
 
 package bzip2
 
-import "github.com/dsnet/compress/internal/errors"
+import "github.com/wuc656/compress/internal/errors"
 
 // rleDone is a special "error" to indicate that the RLE stage is done.
 var rleDone = errorf(errors.Unknown, "RLE1 stage is completed")

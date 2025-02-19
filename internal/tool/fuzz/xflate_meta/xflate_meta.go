@@ -12,7 +12,7 @@ import (
 	"compress/flate"
 	"io"
 
-	"github.com/dsnet/compress/xflate"
+	"github.com/wuc656/compress/xflate"
 )
 
 func Fuzz(data []byte) int {

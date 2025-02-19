@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/dsnet/compress/internal/prefix"
+	"github.com/wuc656/compress/internal/prefix"
 )
 
 func TestDegenerateCodes(t *testing.T) {

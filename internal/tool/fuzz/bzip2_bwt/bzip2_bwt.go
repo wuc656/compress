@@ -10,7 +10,7 @@ import (
 	"bytes"
 	"hash/adler32"
 
-	"github.com/dsnet/compress/bzip2"
+	"github.com/wuc656/compress/bzip2"
 )
 
 func Fuzz(data []byte) int {

@@ -9,7 +9,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 var (

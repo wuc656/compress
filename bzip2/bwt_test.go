@@ -7,7 +7,7 @@ package bzip2
 import (
 	"testing"
 
-	"github.com/dsnet/compress/internal/testutil"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 func TestBurrowsWheelerTransform(t *testing.T) {

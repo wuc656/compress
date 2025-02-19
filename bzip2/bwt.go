@@ -4,7 +4,7 @@
 
 package bzip2
 
-import "github.com/dsnet/compress/bzip2/internal/sais"
+import "github.com/wuc656/compress/bzip2/internal/sais"
 
 // The Burrows-Wheeler Transform implementation used here is based on the
 // Suffix Array by Induced Sorting (SA-IS) methodology by Nong, Zhang, and Chan.

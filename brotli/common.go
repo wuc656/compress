@@ -9,7 +9,7 @@ package brotli
 import (
 	"fmt"
 
-	"github.com/dsnet/compress/internal/errors"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 func errorf(c int, f string, a ...interface{}) error {

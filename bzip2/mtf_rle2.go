@@ -4,7 +4,7 @@
 
 package bzip2
 
-import "github.com/dsnet/compress/internal/errors"
+import "github.com/wuc656/compress/internal/errors"
 
 // moveToFront implements both the MTF and RLE stages of bzip2 at the same time.
 // Any runs of zeros in the encoded output will be replaced by a sequence of

@@ -7,7 +7,7 @@ package prefix
 import (
 	"sort"
 
-	"github.com/dsnet/compress/internal"
+	"github.com/wuc656/compress/internal"
 )
 
 type Encoder struct {

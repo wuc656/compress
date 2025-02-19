@@ -5,7 +5,7 @@
 package brotli
 
 import (
-	"github.com/dsnet/compress/internal/errors"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 // The algorithm used to decode variable length codes is based on the lookup

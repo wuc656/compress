@@ -12,7 +12,7 @@ package xflate
 import (
 	"io"
 
-	"github.com/dsnet/compress/xflate/internal/meta"
+	"github.com/wuc656/compress/xflate/internal/meta"
 )
 
 func NewMetaReader(r io.Reader) *meta.Reader {

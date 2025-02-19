@@ -12,7 +12,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/dsnet/compress/internal"
+	"github.com/wuc656/compress/internal"
 )
 
 // DecodeBitGen decodes a BitGen formatted string.

@@ -87,7 +87,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dsnet/compress/xflate/internal/meta"
+	"github.com/wuc656/compress/xflate/internal/meta"
 )
 
 func init() { log.SetFlags(log.Lshortfile) }
