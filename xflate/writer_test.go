@@ -7,6 +7,7 @@ package xflate
 import (
 	"bytes"
 	"compress/flate"
+	"io"
 	"io/ioutil"
 	"testing"
 
@@ -154,7 +155,7 @@ func TestWriter(t *testing.T) {
 		// Verify that the output stream is DEFLATE compatible.
 		rd := bytes.NewReader(b.Bytes())
 		fr := flate.NewReader(rd)
-		buf, err := ioutil.ReadAll(fr)
+		buf, err := io.ReadAll(fr)
 		if err != nil {
 			t.Errorf("test %d (%s), unexpected error: ReadAll() = %v", i, v.desc, err)
 		}

@@ -12,7 +12,6 @@ import (
 	"fmt"
 	"hash/crc32"
 	"io"
-	"io/ioutil"
 	"log"
 
 	"github.com/dsnet/compress/internal/testutil"
@@ -73,7 +72,7 @@ func Example_zipFile() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		buf, err := ioutil.ReadAll(rc)
+		buf, err := io.ReadAll(rc)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -188,7 +187,7 @@ func Example_gzipFile() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		buf, err := ioutil.ReadAll(gz)
+		buf, err := io.ReadAll(gz)
 		if err != nil {
 			log.Fatal(err)
 		}

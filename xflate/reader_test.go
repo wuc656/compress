@@ -284,7 +284,7 @@ func TestReader(t *testing.T) {
 			goto done
 		}
 
-		buf, err = ioutil.ReadAll(xr)
+		buf, err = io.ReadAll(xr)
 		if err != nil {
 			goto done
 		}
@@ -321,7 +321,7 @@ func TestReaderReset(t *testing.T) {
 	if err := xr.Reset(bytes.NewReader(empty)); err != nil {
 		t.Fatalf("unexpected error: Reset() = %v", err)
 	}
-	buf, err := ioutil.ReadAll(xr)
+	buf, err := io.ReadAll(xr)
 	if err != nil {
 		t.Fatalf("unexpected error: ReadAll() = %v", err)
 	}
@@ -334,7 +334,7 @@ func TestReaderReset(t *testing.T) {
 	if err := xr.Close(); err != nil {
 		t.Fatalf("unexpected error: Close() = %v", err)
 	}
-	if _, err := ioutil.ReadAll(xr); err != errClosed {
+	if _, err := io.ReadAll(xr); err != errClosed {
 		t.Fatalf("mismatching error: ReadAll() = %v, want %v", err, errClosed)
 	}
 
@@ -358,7 +358,7 @@ func TestReaderReset(t *testing.T) {
 		if _, err := xr.Seek(-1, io.SeekEnd); err != nil {
 			t.Fatalf("test %d, unexpected error: Seek() = %v", i, err)
 		}
-		if _, err = ioutil.ReadAll(xr); !errors.IsCorrupted(err) {
+		if _, err = io.ReadAll(xr); !errors.IsCorrupted(err) {
 			t.Fatalf("test %d, mismatching error: ReadAll() = %v, want IsCorrupted(err) == true", i, err)
 		}
 	}
@@ -488,7 +488,7 @@ func TestReaderSeek(t *testing.T) {
 		if len(want) > v.length {
 			want = want[:v.length]
 		}
-		got, err := ioutil.ReadAll(io.LimitReader(xr, int64(v.length)))
+		got, err := io.ReadAll(io.LimitReader(xr, int64(v.length)))
 		if err != nil {
 			t.Fatalf("test %v, unexpected error: ReadAll() = %v", i, err)
 		}

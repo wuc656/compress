@@ -7,14 +7,14 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"os"
 
 	"github.com/dsnet/compress/internal/testutil"
 )
 
 func main() {
-	buf, err := ioutil.ReadAll(os.Stdin)
+	buf, err := io.ReadAll(os.Stdin)
 	if err != nil {
 		panic(err)
 	}

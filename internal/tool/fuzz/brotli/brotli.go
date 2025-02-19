@@ -2,13 +2,14 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE.md file.
 
+//go:build gofuzz
 // +build gofuzz
 
 package bzip2
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 
 	gbrotli "github.com/dsnet/compress/brotli"
 	cbrotli "github.com/dsnet/compress/internal/cgo/brotli"
@@ -20,7 +21,7 @@ func Fuzz(data []byte) int {
 	if err != nil {
 		panic(err)
 	}
-	gb, gerr := ioutil.ReadAll(gr)
+	gb, gerr := io.ReadAll(gr)
 	if err := gr.Close(); gerr == nil {
 		gerr = err
 	} else if gerr != nil && err == nil {
@@ -29,7 +30,7 @@ func Fuzz(data []byte) int {
 
 	// Decompress using the C decoder.
 	cr := cbrotli.NewReader(bytes.NewReader(data))
-	cb, cerr := ioutil.ReadAll(cr)
+	cb, cerr := io.ReadAll(cr)
 	if err := cr.Close(); cerr == nil {
 		cerr = err
 	} else if cerr != nil && err == nil {

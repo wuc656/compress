@@ -584,7 +584,7 @@ func TestReaderReset(t *testing.T) {
 	rd := bytes.NewReader(data)
 	for i, v := range vectors {
 		mr.Reset(rd)
-		buf, err := ioutil.ReadAll(mr)
+		buf, err := io.ReadAll(mr)
 		if err != nil {
 			t.Errorf("test %d, unexpected error: ReadAll() = %v", i, err)
 		}

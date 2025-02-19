@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE.md file.
 
+//go:build gofuzz
 // +build gofuzz
 
 package xflate_meta
@@ -9,7 +10,7 @@ package xflate_meta
 import (
 	"bytes"
 	"compress/flate"
-	"io/ioutil"
+	"io"
 
 	"github.com/dsnet/compress/xflate"
 )
@@ -30,7 +31,7 @@ func Fuzz(data []byte) int {
 func decodeMeta(data []byte) ([]byte, bool) {
 	r := bytes.NewReader(data)
 	mr := xflate.NewMetaReader(r)
-	b, err := ioutil.ReadAll(mr)
+	b, err := io.ReadAll(mr)
 	if err != nil {
 		return nil, false
 	}
@@ -49,7 +50,7 @@ func decompressMeta(data []byte) {
 	r := bytes.NewReader(data)
 	for r.Len() > 0 {
 		zr := flate.NewReader(r)
-		b, err := ioutil.ReadAll(zr)
+		b, err := io.ReadAll(zr)
 		if err != nil {
 			panic(err)
 		}

@@ -869,7 +869,7 @@ func TestReader(t *testing.T) {
 			if err != nil {
 				t.Fatalf("unexpected NewReader error: %v", err)
 			}
-			output, err := ioutil.ReadAll(rd)
+			output, err := io.ReadAll(rd)
 			if cerr := rd.Close(); cerr != nil {
 				err = cerr
 			}

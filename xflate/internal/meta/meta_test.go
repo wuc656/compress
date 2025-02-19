@@ -8,7 +8,6 @@ import (
 	"bytes"
 	"compress/flate"
 	"io"
-	"io/ioutil"
 	"math/rand"
 	"testing"
 
@@ -34,14 +33,14 @@ func testBackwardCompatibility(t *testing.T, b []byte) {
 	// compatibility test below.
 	const emptyDistBlock = "\x05\xc0\x07\x06\x00\x00\x00\x80\x40\x0f\xff\x37\xa0\xca"
 	zd := flate.NewReader(bytes.NewReader([]byte(emptyDistBlock)))
-	if _, err := ioutil.ReadAll(zd); err != nil {
+	if _, err := io.ReadAll(zd); err != nil {
 		t.Fatal("Empty HDistTree bug found in compress/flate, please use Go 1.5 and above")
 	}
 
 	// Append final stream block that just contains the string "test\n".
 	const rawTestBlock = "\x01\x04\x00\xfb\xfftest"
 	zd = flate.NewReader(bytes.NewBuffer([]byte(string(b) + rawTestBlock)))
-	got, err := ioutil.ReadAll(zd)
+	got, err := io.ReadAll(zd)
 	if err != nil {
 		t.Fatalf("unexpected error: ReadAll() = %v", err)
 	}
@@ -228,7 +227,7 @@ func TestRandom(t *testing.T) {
 
 	// Decode reader test.
 	mr := NewReader(bytes.NewReader(obuf.Bytes()))
-	buf, err := ioutil.ReadAll(mr)
+	buf, err := io.ReadAll(mr)
 	if err != nil {
 		t.Errorf("unexpected error: Read() = %v", err)
 	}

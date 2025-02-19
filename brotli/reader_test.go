@@ -510,7 +510,7 @@ func TestReader(t *testing.T) {
 		if err != nil {
 			t.Errorf("test %d, unexpected NewReader error: %v", i, err)
 		}
-		output, err := ioutil.ReadAll(rd)
+		output, err := io.ReadAll(rd)
 		if cerr := rd.Close(); cerr != nil {
 			err = cerr
 		}
@@ -554,7 +554,7 @@ func benchmarkDecode(b *testing.B, testfile string) {
 	if err != nil {
 		b.Fatal(err)
 	}
-	output, err := ioutil.ReadAll(rd)
+	output, err := io.ReadAll(rd)
 	if err != nil {
 		b.Fatal(err)
 	}

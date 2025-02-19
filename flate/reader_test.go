@@ -838,7 +838,7 @@ func TestReader(t *testing.T) {
 			if err != nil {
 				t.Fatalf("unexpected NewReader error: %v", err)
 			}
-			output, err := ioutil.ReadAll(rd)
+			output, err := io.ReadAll(rd)
 			if cerr := rd.Close(); cerr != nil {
 				err = cerr
 			}
@@ -962,7 +962,7 @@ func TestReaderReset(t *testing.T) {
 	}
 
 	rd.Reset(strings.NewReader("garbage"))
-	if _, err := ioutil.ReadAll(&rd); !errors.IsCorrupted(err) {
+	if _, err := io.ReadAll(&rd); !errors.IsCorrupted(err) {
 		t.Errorf("mismatching Read error: got %v, want IsCorrupted(err) == true", err)
 	}
 	if err := rd.Close(); !errors.IsCorrupted(err) {
@@ -970,7 +970,7 @@ func TestReaderReset(t *testing.T) {
 	}
 
 	rd.Reset(strings.NewReader(data))
-	if _, err := ioutil.ReadAll(&rd); err != nil {
+	if _, err := io.ReadAll(&rd); err != nil {
 		t.Errorf("unexpected Read error: %v", err)
 	}
 	if err := rd.Close(); err != nil {

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE.md file.
 
+//go:build gofuzz
 // +build gofuzz
 
 package bzip2
@@ -9,7 +10,7 @@ package bzip2
 import (
 	"bytes"
 	"errors"
-	"io/ioutil"
+	"io"
 
 	"github.com/dsnet/compress"
 	gbzip2 "github.com/dsnet/compress/bzip2"
@@ -42,7 +43,7 @@ func testDecoders(data []byte, updateCRCs bool) ([]byte, bool) {
 	if err != nil {
 		panic(err)
 	}
-	gb, gerr := ioutil.ReadAll(gr)
+	gb, gerr := io.ReadAll(gr)
 	if err := gr.Close(); gerr == nil {
 		gerr = err
 	} else if gerr != nil && err == nil {
@@ -60,7 +61,7 @@ func testDecoders(data []byte, updateCRCs bool) ([]byte, bool) {
 
 	// Decompress using the C decoder.
 	cr := cbzip2.NewReader(bytes.NewReader(data))
-	cb, cerr := ioutil.ReadAll(cr)
+	cb, cerr := io.ReadAll(cr)
 	if err := cr.Close(); cerr == nil {
 		cerr = err
 	} else if cerr != nil && err == nil {
