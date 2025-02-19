@@ -7,7 +7,6 @@ package bzip2
 import (
 	"bytes"
 	"io"
-	"io/ioutil"
 	"testing"
 )
 
@@ -23,7 +22,7 @@ func BenchmarkEncode(b *testing.B) {
 		b.StartTimer()
 		for i := 0; i < b.N; i++ {
 			br.Reset(data)
-			wr.Reset(ioutil.Discard)
+			wr.Reset(io.Discard)
 
 			n, err := io.Copy(wr, br)
 			if n != int64(len(data)) || err != nil {

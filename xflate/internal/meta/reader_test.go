@@ -7,7 +7,6 @@ package meta
 import (
 	"bytes"
 	"io"
-	"io/ioutil"
 	"math/rand"
 	"strings"
 	"testing"
@@ -629,7 +628,7 @@ func BenchmarkReader(b *testing.B) {
 		rd.Reset(bb.Bytes())
 		mr.Reset(rd)
 
-		cnt, err := io.Copy(ioutil.Discard, mr)
+		cnt, err := io.Copy(io.Discard, mr)
 		if cnt != int64(len(data)) || err != nil {
 			b.Fatalf("Copy() = (%d, %v), want (%d, nil)", cnt, err, len(data))
 		}

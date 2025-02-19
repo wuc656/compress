@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE.md file.
 
+//go:build ignore
 // +build ignore
 
 //go:generate go run zeros.go
@@ -10,7 +11,7 @@
 // tests the best case compression scenario.
 package main
 
-import "io/ioutil"
+import "os"
 
 const (
 	name = "zeros.bin"
@@ -19,7 +20,7 @@ const (
 
 func main() {
 	b := make([]byte, size)
-	if err := ioutil.WriteFile(name, b[:size], 0664); err != nil {
+	if err := os.WriteFile(name, b[:size], 0664); err != nil {
 		panic(err)
 	}
 }

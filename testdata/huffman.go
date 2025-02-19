@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE.md file.
 
+//go:build ignore
 // +build ignore
 
 //go:generate go run huffman.go
@@ -14,8 +15,8 @@
 package main
 
 import (
-	"io/ioutil"
 	"math/rand"
+	"os"
 	"unicode/utf8"
 )
 
@@ -74,7 +75,7 @@ func main() {
 		}
 	}
 
-	if err := ioutil.WriteFile(name, b[:size], 0664); err != nil {
+	if err := os.WriteFile(name, b[:size], 0664); err != nil {
 		panic(err)
 	}
 }

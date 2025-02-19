@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE.md file.
 
+//go:build ignore
 // +build ignore
 
 //go:generate go run random.go
@@ -11,8 +12,8 @@
 package main
 
 import (
-	"io/ioutil"
 	"math/rand"
+	"os"
 )
 
 const (
@@ -27,7 +28,7 @@ func main() {
 	for i := 0; i < size; i++ {
 		b = append(b, byte(r.Int()))
 	}
-	if err := ioutil.WriteFile(name, b[:size], 0664); err != nil {
+	if err := os.WriteFile(name, b[:size], 0664); err != nil {
 		panic(err)
 	}
 }

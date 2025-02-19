@@ -9,7 +9,6 @@ import (
 	"compress/flate"
 	"flag"
 	"io"
-	"io/ioutil"
 	"os/exec"
 	"strings"
 	"testing"
@@ -997,7 +996,7 @@ func BenchmarkDecode(b *testing.B) {
 			br.Reset(buf.Bytes())
 			rd.Reset(br)
 
-			n, err := io.Copy(ioutil.Discard, rd)
+			n, err := io.Copy(io.Discard, rd)
 			if n != int64(len(data)) || err != nil {
 				b.Fatalf("Copy() = (%d, %v), want (%d, nil)", n, err, len(data))
 			}

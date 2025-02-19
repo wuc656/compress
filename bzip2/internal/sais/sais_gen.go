@@ -10,7 +10,6 @@ package main
 import (
 	"bytes"
 	"go/format"
-	"io/ioutil"
 	"log"
 	"os"
 	"text/template"
@@ -34,8 +33,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("format.Source error: %v", err)
 	}
-	if err := ioutil.WriteFile(path, out, 0644); err != nil {
-		log.Fatalf("ioutil.WriteFile error: %v", err)
+	if err := os.WriteFile(path, out, 0644); err != nil {
+		log.Fatalf("os.WriteFile error: %v", err)
 	}
 }
 

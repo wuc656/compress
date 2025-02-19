@@ -9,7 +9,6 @@ import (
 	"encoding/binary"
 	"hash/crc32"
 	"io"
-	"io/ioutil"
 	"math"
 
 	"github.com/dsnet/compress/internal/errors"
@@ -168,7 +167,7 @@ func (xr *Reader) Read(buf []byte) (int, error) {
 	if xr.discard > 0 {
 		var n int64
 		xr.lr = io.LimitedReader{R: xr.zr, N: xr.discard}
-		n, xr.err = io.Copy(ioutil.Discard, &xr.lr)
+		n, xr.err = io.Copy(io.Discard, &xr.lr)
 		if xr.err != nil {
 			return 0, xr.err
 		}

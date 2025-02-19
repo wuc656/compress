@@ -7,7 +7,6 @@ package xflate
 import (
 	"bytes"
 	"io"
-	"io/ioutil"
 	"math"
 	"math/rand"
 	"testing"
@@ -601,7 +600,7 @@ func BenchmarkReader(b *testing.B) {
 				b.Fatalf("unexpected error: Seek() = %v", err)
 			}
 			*lr = io.LimitedReader{R: xr, N: n}
-			if _, err := io.Copy(ioutil.Discard, lr); err != nil {
+			if _, err := io.Copy(io.Discard, lr); err != nil {
 				b.Fatalf("unexpected error: Copy() = %v", err)
 			}
 		}

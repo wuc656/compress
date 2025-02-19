@@ -8,7 +8,7 @@ import (
 	"bufio"
 	"bytes"
 	"io"
-	"io/ioutil"
+	"os"
 	"runtime"
 	"testing"
 
@@ -546,7 +546,7 @@ func benchmarkDecode(b *testing.B, testfile string) {
 	b.StopTimer()
 	b.ReportAllocs()
 
-	input, err := ioutil.ReadFile("testdata/" + testfile)
+	input, err := os.ReadFile("testdata/" + testfile)
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -569,7 +569,7 @@ func benchmarkDecode(b *testing.B, testfile string) {
 		if err != nil {
 			b.Fatalf("unexpected NewReader error: %v", err)
 		}
-		cnt, err := io.Copy(ioutil.Discard, rd)
+		cnt, err := io.Copy(io.Discard, rd)
 		if err != nil {
 			b.Fatalf("unexpected error: %v", err)
 		}

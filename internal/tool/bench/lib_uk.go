@@ -9,7 +9,6 @@ package main
 
 import (
 	"io"
-	"io/ioutil"
 
 	"github.com/ulikunitz/xz/lzma"
 )
@@ -47,6 +46,6 @@ func init() {
 			if err != nil {
 				panic(err)
 			}
-			return ioutil.NopCloser(zr)
+			return io.NopCloser(zr)
 		})
 }

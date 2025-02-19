@@ -10,7 +10,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
-	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -46,7 +46,7 @@ func ResizeData(input []byte, n int) []byte {
 
 // MustLoadFile must load a file or else panics.
 func MustLoadFile(file string) []byte {
-	b, err := ioutil.ReadFile(file)
+	b, err := os.ReadFile(file)
 	if err != nil {
 		panic(err)
 	}

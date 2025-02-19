@@ -8,7 +8,6 @@ import (
 	"bytes"
 	"compress/flate"
 	"io"
-	"io/ioutil"
 	"testing"
 
 	"github.com/dsnet/compress/internal/testutil"
@@ -170,13 +169,13 @@ func TestWriter(t *testing.T) {
 
 func TestWriterReset(t *testing.T) {
 	// Test bad Writer config.
-	if _, err := NewWriter(ioutil.Discard, &WriterConfig{Level: -431}); err == nil {
+	if _, err := NewWriter(io.Discard, &WriterConfig{Level: -431}); err == nil {
 		t.Fatalf("unexpected success: NewWriter()")
 	}
 
 	// Test Writer for idempotent Close.
 	xw := new(Writer)
-	xw.Reset(ioutil.Discard)
+	xw.Reset(io.Discard)
 	if _, err := xw.Write([]byte("hello, world!")); err != nil {
 		t.Fatalf("unexpected error: Write() = %v", err)
 	}

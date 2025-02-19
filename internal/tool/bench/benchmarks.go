@@ -9,7 +9,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
+	"os"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -34,7 +34,7 @@ func BenchmarkEncoder(input []byte, enc Encoder, lvl int) testing.BenchmarkResul
 		runtime.GC()
 		b.StartTimer()
 		for i := 0; i < b.N; i++ {
-			wr := enc(ioutil.Discard, lvl)
+			wr := enc(io.Discard, lvl)
 			_, err := io.Copy(wr, bytes.NewBuffer(input))
 			if err := wr.Close(); err != nil {
 				b.Fatalf("unexpected error: %v", err)
@@ -79,7 +79,7 @@ func BenchmarkDecoder(input []byte, dec Decoder) testing.BenchmarkResult {
 		b.StartTimer()
 		for i := 0; i < b.N; i++ {
 			rd := dec(bufio.NewReader(bytes.NewBuffer(input)))
-			cnt, err := io.Copy(ioutil.Discard, rd)
+			cnt, err := io.Copy(io.Discard, rd)
 			if err := rd.Close(); err != nil {
 				b.Fatalf("unexpected error: %v", err)
 			}
@@ -162,7 +162,7 @@ func benchmarkSuite(codecs []string, files []file, levels, sizes []int, tick fun
 	for _, f := range files {
 		for _, l := range levels {
 			for _, n := range sizes {
-				b, err := ioutil.ReadFile(f.Abs)
+				b, err := os.ReadFile(f.Abs)
 				if err == nil {
 					b = testutil.ResizeData(b, n)
 				}

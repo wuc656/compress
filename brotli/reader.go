@@ -6,7 +6,6 @@ package brotli
 
 import (
 	"io"
-	"io/ioutil"
 
 	"github.com/dsnet/compress/internal"
 	"github.com/dsnet/compress/internal/errors"
@@ -127,7 +126,7 @@ func (br *Reader) Reset(r io.Reader) error {
 		dists:   [4]int{4, 11, 15, 16}, // RFC section 4
 
 		// TODO(dsnet): Should we write meta data somewhere useful?
-		metaWr:  ioutil.Discard,
+		metaWr:  io.Discard,
 		metaBuf: br.metaBuf,
 	}
 	br.rd.Init(r)

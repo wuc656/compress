@@ -9,7 +9,6 @@ package main
 
 import (
 	"io"
-	"io/ioutil"
 
 	"compress/bzip2"
 	"compress/flate"
@@ -30,6 +29,6 @@ func init() {
 		})
 	RegisterDecoder(FormatBZ2, "std",
 		func(r io.Reader) io.ReadCloser {
-			return ioutil.NopCloser(bzip2.NewReader(r))
+			return io.NopCloser(bzip2.NewReader(r))
 		})
 }

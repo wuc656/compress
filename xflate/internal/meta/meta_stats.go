@@ -30,7 +30,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"math"
 	"math/big"
@@ -115,7 +115,7 @@ func main() {
 				}
 
 				// Encode the string and compute the output length.
-				mw.Reset(ioutil.Discard)
+				mw.Reset(io.Discard)
 				if _, err := mw.Write(buf); err != nil {
 					log.Fatal(err)
 				}
