@@ -15,7 +15,7 @@ import (
 	"log"
 
 	"github.com/wuc656/compress/internal/testutil"
-	"github.com/wuc656/compresss/xflate"
+	"github.com/wuc656/compress/xflate"
 )
 
 func init() { log.SetFlags(log.Lshortfile) }

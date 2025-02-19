@@ -42,7 +42,7 @@ import (
 	"compress/flate"
 	"fmt"
 
-	"github.com/wuc656/compresss/internal/errors"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 // These are the magic values found in the XFLATE footer.

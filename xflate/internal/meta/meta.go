@@ -21,7 +21,7 @@ import (
 	"fmt"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/prefix"
+	"github.com/wuc656/compress/internal/prefix"
 )
 
 // These are the magic values that begin every single meta block.

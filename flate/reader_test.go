@@ -14,7 +14,7 @@ import (
 	"testing"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/testutil"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 var zcheck = flag.Bool("zcheck", false, "verify reader test vectors with C zlib library")

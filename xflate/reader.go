@@ -12,7 +12,7 @@ import (
 	"math"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/xflate/internal/meta"
+	"github.com/wuc656/compress/xflate/internal/meta"
 )
 
 // chunk is a tuple of raw (uncompressed) size and compressed size for a chunk.

@@ -9,7 +9,7 @@ import (
 	"io"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/prefix"
+	"github.com/wuc656/compress/internal/prefix"
 )
 
 // A Writer is an io.Writer that can write XFLATE's meta encoding.

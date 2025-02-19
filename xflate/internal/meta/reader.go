@@ -9,7 +9,7 @@ import (
 	"io"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/prefix"
+	"github.com/wuc656/compress/internal/prefix"
 )
 
 // A Reader is an io.Reader that can read XFLATE's meta encoding.

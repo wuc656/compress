@@ -12,7 +12,7 @@ import (
 	"testing"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/testutil"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 // TestReader tests that the reader is able to properly decode a set of valid

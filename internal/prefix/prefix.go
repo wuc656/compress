@@ -10,7 +10,7 @@ import (
 	"sort"
 
 	"github.com/wuc656/compress/internal"
-	"github.com/wuc656/compresss/internal/errors"
+	"github.com/wuc656/compress/internal/errors"
 )
 
 func errorf(c int, f string, a ...interface{}) error {

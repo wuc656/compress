@@ -11,7 +11,7 @@ import (
 	"testing"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/testutil"
+	"github.com/wuc656/compress/internal/testutil"
 )
 
 // TestWriter tests that the encoded output matches the expected output exactly.

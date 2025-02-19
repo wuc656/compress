@@ -8,7 +8,7 @@ import (
 	"io"
 
 	"github.com/wuc656/compress/internal/errors"
-	"github.com/wuc656/compresss/internal/prefix"
+	"github.com/wuc656/compress/internal/prefix"
 )
 
 type Reader struct {
